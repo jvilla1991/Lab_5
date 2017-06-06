@@ -1,12 +1,18 @@
 import java.util.Scanner;
 import java.util.Random;
 
+// Create an Application that simulates dice rolling
+
+// Dice object created. There are going to be multiple dice(two in this case) with the same characteristics(number of sides) and actions(rolling)
 public class Dice {
 
+    // Define a new generator after importing Java's Random Class
     Random randGen = new Random();
     int sides;
 
-    public void getSides(int x)
+
+
+    public void setSides(int x)
     {
         sides = x;
         return;
@@ -30,10 +36,15 @@ public class Dice {
         System.out.println("How many sides are on your dice?");
         userSides = scnr.nextInt();
 
-        dice1.getSides(userSides);
-        dice2.getSides(userSides);
+        dice1.setSides(userSides);
+        dice2.setSides(userSides);
+
         scnr.nextLine();
 
+        System.out.println("If you are ready to roll, enter any key");
+        scnr.nextLine();
+
+        // Validation loop. This one is rolling the dice everytime the user presses enter.
         do {
             System.out.println("Results of Die 1: " + dice1.rollDice());
             System.out.println("Results of Die 2: " + dice2.rollDice());
